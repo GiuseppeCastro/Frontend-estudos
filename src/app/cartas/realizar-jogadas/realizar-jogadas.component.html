@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h2>Lista de Jogadores</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Data de Nascimento</th>
+        <th>Total de Partidas</th>
+        <th>Percentual de Vitórias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jogador of jogadores">
+        <td>{{ jogador.id }}</td>
+        <td>{{ jogador.nome }}</td>
+        <td>{{ jogador.email }}</td>
+        <td>{{ jogador.dataNascimento }}</td>
+        <td>{{ jogador.totalPartidas }}</td>
+        <td>{{ jogador.percentualVitorias }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

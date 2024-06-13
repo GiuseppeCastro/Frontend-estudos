@@ -1,0 +1,28 @@
+.carta-item {
+  margin-bottom: 20px;
+}
+
+.carta {
+  padding: 10px;
+  border: 1px solid #3498db; /* Cor da borda azul */
+  border-radius: 8px; /* Borda arredondada */
+  background-color: #ffffff; /* Cor de fundo branca */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito de elevação */
+  transition: box-shadow 0.3s ease-in-out; /* Transição suave da sombra ao passar o mouse */
+}
+
+.carta:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+.carta p {
+  margin: 0;
+}
+
+.carta button {
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}

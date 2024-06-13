@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="comboBox">Escolha um jogador</label>
+        <select class="form-control" id="comboBox" [(ngModel)]="selectedJogadorId">
+          <option value="0" disabled>Selecione um jogador</option>
+          <option *ngFor="let jogador of jogadores" [value]="jogador.id">
+            {{ jogador.nome }} ({{ jogador.email }})
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-primary mt-3" (click)="jogar()">Iniciar X1</button>
+
+      <!-- Exibição das cartas do jogador após iniciar a partida -->
+      <div *ngIf="partidaDTO">
+          <h3>Cartas do Jogador</h3>
+          <div class="cartas-container">
+            <div *ngFor="let carta of partidaDTO.cartasJogador" class="carta-item">
+              <div class="carta">
+                <p><strong>Nome da Carta:</strong> {{ carta.carta.nome }}</p>
+                <p><strong>Força:</strong> {{ carta.carta.forca }}</p>
+                <p><strong>Velocidade:</strong> {{ carta.carta.velocidade }}</p>
+                <p><strong>Inteligência:</strong> {{ carta.carta.inteligencia }}</p>
+                <p><strong>Data de Cadastro:</strong> {{ carta.carta.dataCadastro }}</p>
+                <!-- Adicionar combobox com atributos disponíveis -->
+                <div class="form-group">
+                  <label for="atributosSelect">Atributos Disponíveis:</label>
+                  <select class="form-control" id="atributosSelect">
+                    <option *ngFor="let atributo of partidaDTO.atributosDisponiveis" [value]="atributo">
+                      {{ atributo }}
+                    </option>
+                  </select>
+                </div>
+                <!-- Botão para jogar -->
+                <button class="btn btn-success mt-2">Jogar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
